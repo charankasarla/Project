@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form in Centered Container</title>
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+
+  .container {
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .form-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  select,
+  input[type="date"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Create New Item</h1>
+    <form action ="" method = "post"> {% csrf_token %}
+      <div class="form-column">
+        <div class="form-group">
+          <label for="name">Product Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name">
+        </div>
+      </div>
+      <div class="form-column">
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input type="number" id="quantity" name="quantity" placeholder="Enter the quantity">
+        </div>
+        <div class="form-group">
+          <label for="quantity_sold">Quantity Sold</label>
+          <input type="number" id="quantity_sold" name="quantity_sold" placeholder="Enter the no.of Items Sold">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="selling_price">Selling Price</label>
+        <input type="number" id="selling_price" name="selling_price">
+      </div>
+      <div class="form-group">
+        <label for="profit_earned">Profit Earned</label>
+        <input type = "number" id="profit_earned" name="profit_earned" placeholder="Enter your profit">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
